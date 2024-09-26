@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine.Networking;
+using UnityEngine;
 
 public static class RestAPI
 {
@@ -16,6 +17,9 @@ public static class RestAPI
                 uri += $"{parameter.Item1}={parameter.Item2}&";
             }
         }
+        if (uri[uri.Length-1] == '&')
+            uri = uri.Remove(uri.Length - 1);
+        Debug.Log(uri);
 
         UnityWebRequest request = UnityWebRequest.Get(uri);
 
