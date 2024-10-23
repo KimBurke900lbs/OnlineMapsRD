@@ -61,12 +61,17 @@ public class CategorySearcher : MonoBehaviour
     private async Task<List<Item>> SearchCategoryRecursive(List<Item> items, string category, int offset)
     {
         List<Item> results = await HereSearch(category, offset);
-        if (items != null)
+        Debug.Log($"Here Browse call for category of {category} with offset of {offset}");
+        if (results != null)
         {
+            Debug.Log($"Received results: " + results.Count);
             // TODO - filter results for only city == Katy results
             items.AddRange(results);
-            if (items.Count == 100)
-                await SearchCategoryRecursive(items, category, offset + 1);
+            if (results.Count == 100 - offset)
+            {
+                offset = offset + 1;
+                await SearchCategoryRecursive(items, category, offset);
+            }
         }
         return items;
     }

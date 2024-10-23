@@ -1748,6 +1748,7 @@ MonoBehaviour:
   apiKey: AIzaSyAvlfpyAmJmE5MAJwOTYteB83kg96FERKw
   longitudeField: {fileID: 2109784957}
   latitudeField: {fileID: 488637534}
+  prefab: {fileID: 1609319934230464, guid: a8b7db4874ca17641ab4ecb6b37d91b8, type: 3}
   searchType: restaurant
 --- !u!1 &1415859835
 GameObject:

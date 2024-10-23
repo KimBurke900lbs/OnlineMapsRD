@@ -52,7 +52,6 @@ public static class HereAPIManager
         return items;
     }
 
-
     /// <summary>
     ///  
     /// </summary>
